@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Actividad 3.1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilo.css">
+  
+</head>
+<body>
+<div id="resultado"></div>  
+  
+  
+<script>
+	class Television{
+		constructor(nombre, categoria, unidades, precio){
+			this._nombre = nombre;
+			this._categoria = categoria;
+			this._unidades = unidades;
+			this._precio = precio;
+		}
+		
+		get nombre() {
+			return this._nombre;
+		}
+		
+		get categoria(){	
+			return this._categoria;
+		}
+		
+		get unidades(){
+			return this._unidades;
+		}
+		
+		get precio(){
+			return this._precio;
+		}
+		
+		set nombre(valor){
+			this._nombre = valor;
+		}
+		
+		set categoria(valor){
+			this._categoria = categoria;
+		}
+		
+		set unidades(valor){
+			this._unidades = valor;
+		}
+		
+		set precio(valor){
+			this._precio = precio;
+		}
+		
+		importe(){
+			return this.precio * this.unidades;
+		}
+	}
+	//Instanciamos el objeto pedido
+	let tvSamsung = new Television('TV Samsung 42"',"Televisores",4,345.95);
+	document.getElementById("resultado").innerHTML = `Importe total: ${tvSamsung.importe()}`;
+  </script> 
+</body>
+</html>
+
