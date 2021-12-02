@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Actividad 4.1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+</head>
+<body>
+<div id="resultado"></div>  
+  
+  
+<script>
+	class Producto{
+		constructor(nombre, categoria, unidades, precio){
+			this._nombre = nombre;
+			this._categoria = categoria;
+			this._unidades = unidades;
+			this._precio = precio;
+		}
+		
+		get nombre() {
+			return this._nombre;
+		}
+		
+		get categoria(){	
+			return this._categoria;
+		}
+		
+		get unidades(){
+			return this._unidades;
+		}
+		
+		get precio(){
+			return this._precio;
+		}
+		
+		set nombre(valor){
+			this._nombre = valor;
+		}
+		
+		set categoria(valor){
+			this._categoria = categoria;
+		}
+		
+		set unidades(valor){
+			this._unidades = valor;
+		}
+		
+		set precio(valor){
+			this._precio = precio;
+		}
+		
+		importe(){
+			return this.precio * this.unidades;
+		}
+		
+		getInfo(){
+			return `Nombre: ${this.nombre} (${this.categoria}): ${this.unidades} uds x ${this.precio}€ = ${this.importe()}€`;
+		}
+	}
+	//Instanciamos tres objetos
+	let producto1 = new Producto("Playstation 5","Videojuegos",400,1);
+	let producto2 = new Producto("Guerra y paz","Libros",20,3);
+	let producto3 = new Producto("El señor de los anillos","libros",30,1);
+	
+	//Mostramos la información por consola
+	console.log(producto1.getInfo());
+	console.log(producto2.getInfo());
+	console.log(producto3.getInfo());
+	
+  </script> 
+</body>
+</html>
